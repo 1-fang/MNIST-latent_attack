@@ -4,6 +4,6 @@ This project demonstrates an adversarial attack on the MNIST dataset using a Var
 
 ## Introduction
 
-Adversarial attacks are techniques that involve manipulating input data to cause machine learning models to make incorrect predictions. In this project, we demonstrate how to implement FGSM on the MNIST dataset using a VAE and a simple neural network classifier.
+In this project, the MNIST dataset is first transformed into latent codes using a Variational Autoencoder (VAE). The classifier is trained on these latent codes. The core idea is to compute the gradient of the classifier’s output with respect to the input image through the latent code. This is achieved by first calculating the gradient of the classifier’s output with respect to the latent code (∂y/∂z) and then calculating the gradient of the latent code with respect to the input image (∂z/∂x). By multiplying these two gradients (∂y/∂z * ∂z/∂x), we obtain the gradient of the classifier’s output with respect to the input image (∂y/∂x), which is then used for the FGSM attack.
 
-## Project Structure
+
